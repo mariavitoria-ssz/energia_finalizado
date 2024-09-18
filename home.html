@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Energia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #a2c2e9, #8a9ab2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #c2d8f0;
+            text-shadow: 2px 2px #1e3a5f;
+        }
+
+        .intro {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #e0e8f3;
+            text-shadow: 1px 1px #1e3a5f;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid #c2d8f0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 280px;
+            margin: 20px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #c2d8f0;
+            text-shadow: 1px 1px #1e3a5f;
+        }
+
+        .card .description {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #e0e8f3;
+        }
+
+        button {
+            background: #c2d8f0;
+            color: #1e3a5f;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: #c2d8f0;
+        }
+
+        .info-card {
+            display: none;
+            margin-top: 15px;
+            background-color: rgba(28, 49, 81, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            color: #c2d8f0;
+        }
+
+        .info-card p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Consumo de Energia</h1>
+        <p class="intro">Veja o consumo de energia de cada cômodo da casa e planeje seu uso de forma eficiente!</p>
+        <div class="card-container">
+            <div class="card">
+                <h2>Quarto dos Pais</h2>
+                <p class="description">Confira o consumo detalhado do quarto dos pais.</p>
+                <button onclick="toggleInfo('info1')">Ver Consumo</button>
+                <div id="info1" class="info-card">
+                    <p>Consumo diário: <strong>2,14 kWh</strong></p>
+                    <p>Consumo mensal: <strong>64,2 kWh</strong></p>
+                    <p>Consumo anual: <strong>770,4 kWh</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Quarto da Filha</h2>
+                <p class="description">Confira o consumo detalhado do quarto da filha.</p>
+                <button onclick="toggleInfo('info2')">Ver Consumo</button>
+                <div id="info2" class="info-card">
+                    <p>Consumo diário: <strong>2,115 kWh</strong></p>
+                    <p>Consumo mensal: <strong>63,45 kWh</strong></p>
+                    <p>Consumo anual: <strong>761,4 kWh</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Sala de Estar</h2>
+                <p class="description">Confira o consumo detalhado da sala de estar.</p>
+                <button onclick="toggleInfo('info3')">Ver Consumo</button>
+                <div id="info3" class="info-card">
+                    <p>Consumo diário: <strong>2,03 kWh</strong></p>
+                    <p>Consumo mensal: <strong>60,9 kWh</strong></p>
+                    <p>Consumo anual: <strong>730,8 kWh</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Cozinha</h2>
+                <p class="description">Confira o consumo detalhado da cozinha.</p>
+                <button onclick="toggleInfo('info4')">Ver Consumo</button>
+                <div id="info4" class="info-card">
+                    <p>Consumo diário: <strong>6,8475 kWh</strong></p>
+                    <p>Consumo mensal: <strong>205,425 kWh</strong></p>
+                    <p>Consumo anual: <strong>2.465,1 kWh</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Área Externa</h2>
+                <p class="description">Confira o consumo detalhado da área externa.</p>
+                <button onclick="toggleInfo('info5')">Ver Consumo</button>
+                <div id="info5" class="info-card">
+                    <p>Consumo diário: <strong>8,77 kWh</strong></p>
+                    <p>Consumo mensal: <strong>263,1 kWh</strong></p>
+                    <p>Consumo anual: <strong>3.157,2 kWh</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            info.style.display = (info.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
