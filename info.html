@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação: Conta de Energia e Bandeiras Tarifárias</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #a2c2e9, #8a9ab2);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #c2d8f0;
+            text-shadow: 2px 2px #1e3a5f;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #e0e8f3;
+        }
+
+        .back-button {
+            background-color: #ffcc00;
+            color: #1e3a5f;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #fff;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Como é calculada a conta de energia?</h1>
+        <p>
+            A conta de energia elétrica é calculada com base no consumo em kilowatt-hora (kWh) da sua residência. O consumo é medido pelo medidor instalado na sua casa e corresponde à quantidade de energia que seus aparelhos elétricos consomem em determinado período.
+        </p>
+        <p>
+            A fórmula básica para o cálculo do valor a ser pago é: 
+            <strong>Valor da Conta = Consumo em kWh × Tarifa de Energia (R$/kWh)</strong>.
+        </p>
+        <p>
+            Além da tarifa básica, existem as bandeiras tarifárias, que são aplicadas dependendo das condições de geração de energia no país. Os valores das bandeiras tarifárias para 2024 são:
+        </p>
+        <ul style="text-align: left; margin: 0 auto; max-width: 600px;">
+            <li><strong>Bandeira Verde:</strong> Sem cobrança adicional.</li>
+            <li><strong>Bandeira Amarela:</strong> R$ 1,885 a cada 100 kWh consumidos.</li>
+            <li><strong>Bandeira Vermelha (Patamar 1):</strong> R$ 4,463 a cada 100 kWh consumidos.</li>
+        </ul>
+        <p>
+            A bandeira tarifária é ajustada de acordo com as condições de geração de energia no Brasil. Em épocas de seca, quando os reservatórios das hidrelétricas estão baixos, as usinas térmicas são acionadas, aumentando o custo da energia.
+        </p>
+        <button class="back-button" onclick="window.location.href='home.html'">Voltar para a Calculadora</button>
+    </div>
+</body>
+</html>

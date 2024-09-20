@@ -107,12 +107,37 @@
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
+
+        .info-button {
+            background-color: #ffcc00;
+            color: #1e3a5f;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .info-button:hover {
+            background-color: #fff;
+            color: #ffcc00;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Calculadora de Consumo de Energia</h1>
         <p class="intro">Veja o consumo de energia de cada cômodo da casa e planeje seu uso de forma eficiente!</p>
+        
+        <!-- Botão para página de explicação -->
+        <button class="info-button" onclick="window.location.href='info.html'">Como funciona a conta de energia?</button>
+
+        <!-- Botão para voltar à página inicial -->
+        <button class="info-button" onclick="window.location.href='index.html'">Gerenciamento</button>
+
         <div class="card-container">
             <div class="card">
                 <h2>Quarto dos Pais</h2>
@@ -122,6 +147,9 @@
                     <p>Consumo diário: <strong>2,14 kWh</strong></p>
                     <p>Consumo mensal: <strong>64,2 kWh</strong></p>
                     <p>Consumo anual: <strong>770,4 kWh</strong></p>
+                    <p>Custo diário: R$ <span id="custo-diario-quarto-pais"></span></p>
+                    <p>Custo mensal: R$ <span id="custo-mensal-quarto-pais"></span></p>
+                    <p>Custo anual: R$ <span id="custo-anual-quarto-pais"></span></p>
                 </div>
             </div>
 
@@ -133,6 +161,9 @@
                     <p>Consumo diário: <strong>2,115 kWh</strong></p>
                     <p>Consumo mensal: <strong>63,45 kWh</strong></p>
                     <p>Consumo anual: <strong>761,4 kWh</strong></p>
+                    <p>Custo diário: R$ <span id="custo-diario-quarto-filha"></span></p>
+                    <p>Custo mensal: R$ <span id="custo-mensal-quarto-filha"></span></p>
+                    <p>Custo anual: R$ <span id="custo-anual-quarto-filha"></span></p>
                 </div>
             </div>
 
@@ -144,6 +175,9 @@
                     <p>Consumo diário: <strong>2,03 kWh</strong></p>
                     <p>Consumo mensal: <strong>60,9 kWh</strong></p>
                     <p>Consumo anual: <strong>730,8 kWh</strong></p>
+                    <p>Custo diário: R$ <span id="custo-diario-sala-estar"></span></p>
+                    <p>Custo mensal: R$ <span id="custo-mensal-sala-estar"></span></p>
+                    <p>Custo anual: R$ <span id="custo-anual-sala-estar"></span></p>
                 </div>
             </div>
 
@@ -155,6 +189,9 @@
                     <p>Consumo diário: <strong>6,8475 kWh</strong></p>
                     <p>Consumo mensal: <strong>205,425 kWh</strong></p>
                     <p>Consumo anual: <strong>2.465,1 kWh</strong></p>
+                    <p>Custo diário: R$ <span id="custo-diario-cozinha"></span></p>
+                    <p>Custo mensal: R$ <span id="custo-mensal-cozinha"></span></p>
+                    <p>Custo anual: R$ <span id="custo-anual-cozinha"></span></p>
                 </div>
             </div>
 
@@ -166,6 +203,21 @@
                     <p>Consumo diário: <strong>8,77 kWh</strong></p>
                     <p>Consumo mensal: <strong>263,1 kWh</strong></p>
                     <p>Consumo anual: <strong>3.157,2 kWh</strong></p>
+                    <p>Custo diário: R$ <span id="custo-diario-area-externa"></span></p>
+                    <p>Custo mensal: R$ <span id="custo-mensal-area-externa"></span></p>
+                    <p>Custo anual: R$ <span id="custo-anual-area-externa"></span></p>
+                </div>
+            </div>
+
+            <!-- Card Total da Casa Interna -->
+            <div class="card">
+                <h2>Total da Casa Interna</h2>
+                <p class="description">Confira o consumo total da casa interna.</p>
+                <button onclick="toggleInfo('info6')">Ver Consumo</button>
+                <div id="info6" class="info-card">
+                    <p>Consumo diário total: <strong>13,13 kWh</strong></p>
+                    <p>Consumo mensal total: <strong>396,075 kWh</strong></p>
+                    <p>Custo mensal total: R$ <span id="custo-mensal-total"></span></p>
                 </div>
             </div>
         </div>
@@ -173,9 +225,34 @@
 
     <script>
         function toggleInfo(id) {
-            const info = document.getElementById(id);
-            info.style.display = (info.style.display === "block") ? "none" : "block";
+            const infoCard = document.getElementById(id);
+            infoCard.style.display = infoCard.style.display === 'block' ? 'none' : 'block';
         }
+
+        // Preenchendo os custos com base nos cálculos fornecidos
+        document.getElementById("custo-diario-quarto-pais").textContent = "2,15";
+        document.getElementById("custo-mensal-quarto-pais").textContent = "64,39";
+        document.getElementById("custo-anual-quarto-pais").textContent = "770,76";
+
+        document.getElementById("custo-diario-quarto-filha").textContent = "2,13";
+        document.getElementById("custo-mensal-quarto-filha").textContent = "63,63";
+        document.getElementById("custo-anual-quarto-filha").textContent = "761,84";
+
+        document.getElementById("custo-diario-sala-estar").textContent = "2,07";
+        document.getElementById("custo-mensal-sala-estar").textContent = "61,33";
+        document.getElementById("custo-anual-sala-estar").textContent = "730,76";
+
+        document.getElementById("custo-diario-cozinha").textContent = "6,96";
+        document.getElementById("custo-mensal-cozinha").textContent = "206,64";
+        document.getElementById("custo-anual-cozinha").textContent = "2.465,94";
+
+        document.getElementById("custo-diario-area-externa").textContent = "8,91";
+        document.getElementById("custo-mensal-area-externa").textContent = "263,99";
+        document.getElementById("custo-anual-area-externa").textContent = "3.157,33";
+
+        // Cálculo do custo total da casa interna
+        const totalMensal = 64.39 + 63.63 + 61.33 + 206.64;
+        document.getElementById("custo-mensal-total").textContent = totalMensal.toFixed(2);
     </script>
 </body>
 </html>
